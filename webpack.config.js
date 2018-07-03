@@ -1,34 +1,37 @@
 
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './js/index.js',
   output: {
+    path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  }
+    publicPath: "dist/"
+  },
+  watch: true,
   module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js/,
-                loader: 'babel',
-                exclude: /(node_modules)/
+                loader: 'babel-loader',
+                exclude: /(node_modules)/,
+                options: { 
+                  presets: ['env']
+                }
             },
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             }
-        ]
-        plugins: [
-          new ExtractTextPlugin('bundle.css');
-    ]}
-
-
-    watch: true
+        ]},
 
     watchOptions: {
-      aggregateTimeout: 700
-  }
+      aggregateTimeout: 200
+    },
+
+    devServer: {
+      overlay: true
+    }
 
 };
