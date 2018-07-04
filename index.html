@@ -2,10 +2,15 @@
 <head>
 	<title>Домашний проект</title>
 	<meta charset='utf-8'>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-	<div>еще некий текст</div>
-	
+	<div ng-app="homeApp">
+		<div ng-controller="welcomeController"> 
+			<div class="hi">{{greetings}}</div>
+		</div>
+	</div>
 	<script src='./dist/bundle.js'></script>
 </body>
 </html>
