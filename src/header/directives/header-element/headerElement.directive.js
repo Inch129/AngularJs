@@ -1,6 +1,12 @@
 export function headerElementDirective() {
     return {
-        templateUrl: './header/directives/header-element/headerElement.template.html',
+        template: `
+        <ul>
+            <li ng-repeat="link in links">
+                <a href="#">{{link.name}}</a>
+            </li>
+        </ul>
+        `,
         restrict: 'E',
         link: function ($scope, $element, $attr) {
             $scope.links = [
