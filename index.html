@@ -8,9 +8,12 @@
 <body>
 <div ng-app="app">
     <div>
-        <header-element>
-            <navElement></navElement>
-        </header-element>
+        <header-element></header-element>
+    </div>
+    <div ng-controller="headerElementController">
+        <div set-color='red'>
+            123
+        </div>
     </div>
 </div>
 <script src='./dist/bundle.js'></script>
