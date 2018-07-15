@@ -1,6 +1,0 @@
-   export default links = [
-        {name: 'vk.com', website: 'vk.com'},
-        {name: 'facebook.com', website: 'facebook.com'},
-        {name: 'linkedin.com', website: 'linkedin.com'},
-        {name: 'instagram.com', website: 'instagram.com'}
-   ];
