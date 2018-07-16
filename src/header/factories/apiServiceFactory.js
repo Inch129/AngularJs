@@ -1,7 +1,10 @@
-export default function () {
+export default  ['$http', function ($http) {
     //как сюда пробросить $http? а не возвращать просто какие то забитые данные.
     //апи решил взять не замысловатое - http://jsonplaceholder.typicode.com/
-    return {
-
+    function getData() {
+        return $http.get('https://jsonplaceholder.typicode.com/posts/1')
     }
-}
+    return {
+        data: getData()
+    }
+}]

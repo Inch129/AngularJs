@@ -1,4 +1,9 @@
-export default ["$scope", function headerElementController($scope, $http) {
-	console.log('some scope' + $scope);
-	$scope.testVariable = 'some test';
+export default ["$scope" , "apiService", function headerElementController($scope, apiService) {
+
+    apiService.data.then( data => {
+        $scope.title = data.data.title;
+        $scope.mainText = data.data.body;
+    });
+
+
 }];

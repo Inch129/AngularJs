@@ -2,6 +2,8 @@ export function headerElementDirective() {
     return {
         template: `
         <div ng-controller="headerElementController">
+            <span>{{title}}</span>
+            <span>{{mainText}}</span>
             <nav-element list="links"></nav-element>
         </div>
         `,
